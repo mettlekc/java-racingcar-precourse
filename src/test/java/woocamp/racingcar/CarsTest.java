@@ -1,6 +1,5 @@
 package woocamp.racingcar;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import woocamp.racingcar.constant.ErrorStatus;
 import woocamp.racingcar.exception.CarNameEmptyStringException;
@@ -28,5 +27,12 @@ public class CarsTest {
     void create_cars_by_empty_string_name() {
         assertThatThrownBy(() -> new Cars("pobi,,honux")).isInstanceOf(CarNameEmptyStringException.class).hasMessage(ErrorStatus.CAR_NAME_EMPTY.getCause());
         assertThatThrownBy(() -> new Cars("pobi, ,honux")).isInstanceOf(CarNameEmptyStringException.class).hasMessage(ErrorStatus.CAR_NAME_EMPTY.getCause());
+    }
+
+    @Test
+    void move_cars() {
+        Cars cars = new Cars("pobi,crong,honux");
+        cars.move();
+        assertThat(cars.getCars()).extracting(Car::getPos).allMatch(c -> c >= 0);
     }
 }

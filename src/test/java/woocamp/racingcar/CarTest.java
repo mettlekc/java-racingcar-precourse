@@ -1,6 +1,7 @@
 package woocamp.racingcar;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
 import woocamp.racingcar.constant.ErrorStatus;
 import woocamp.racingcar.exception.CarNameOutOfLengthException;
@@ -30,11 +31,19 @@ class CarTest {
     }
 
     @Test
-    void get_position() {
-        assertThat(car.getPos(Move.Status.PAUSE)).isZero();
-        assertThat(car.getPos(Move.Status.FORWARD)).isEqualTo(1);
-        assertThat(car.getPos(Move.Status.FORWARD)).isEqualTo(2);
-        assertThat(car.getPos(Move.Status.PAUSE)).isEqualTo(2);
+    void move_position() {
+        assertThat(car.move(Move.Status.PAUSE)).isZero();
+        assertThat(car.move(Move.Status.FORWARD)).isEqualTo(1);
+        assertThat(car.getPos()).isEqualTo(1);
+        assertThat(car.move(Move.Status.FORWARD)).isEqualTo(2);
+        assertThat(car.getPos()).isEqualTo(2);
+        assertThat(car.move(Move.Status.PAUSE)).isEqualTo(2);
+        assertThat(car.getPos()).isEqualTo(2);
+    }
+
+    @RepeatedTest(100)
+    void move_random() {
+        assertThat(car.move() >= 0).isTrue();
     }
 
 }

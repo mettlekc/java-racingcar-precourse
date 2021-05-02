@@ -26,4 +26,10 @@ public class Cars {
     public List<Car> getCars() {
         return cars;
     }
+
+    public void move() {
+        for (Car car : cars) {
+            car.move();
+        }
+    }
 }

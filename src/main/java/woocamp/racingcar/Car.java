@@ -22,11 +22,20 @@ public class Car {
         return this.name;
     }
 
-    public int getPos(Move.Status status) {
+    public int move(Move.Status status) {
         return isMoveForward(status) ? ++pos : pos;
+    }
+
+    public int move() {
+        return move(Move.status());
+    }
+
+    public int getPos() {
+        return this.pos;
     }
 
     private boolean isMoveForward(Move.Status status) {
         return status == Move.Status.FORWARD;
     }
+
 }
