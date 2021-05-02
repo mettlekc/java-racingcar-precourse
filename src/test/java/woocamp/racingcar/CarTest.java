@@ -24,7 +24,8 @@ class CarTest {
 
     @Test
     void over_length_nammed_car() {
-        assertThatThrownBy(() -> new Car("123456")).isInstanceOf(CarNameOutOfLengthException.class);
+        assertThatThrownBy(() -> new Car("123456")).isInstanceOf(CarNameOutOfLengthException.class)
+                .hasMessage("자동차 이름은 최대 %d자리를 넘을 수 없습니다", Car.CAR_NAME_MAX);
     }
 
     @Test
