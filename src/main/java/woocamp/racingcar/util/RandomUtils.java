@@ -1,4 +1,4 @@
-package woocamp.racingcar;
+package woocamp.racingcar.util;
 
 import java.util.Random;
 
