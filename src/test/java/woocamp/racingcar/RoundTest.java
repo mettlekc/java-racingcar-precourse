@@ -1,8 +1,8 @@
 package woocamp.racingcar;
 
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
+import woocamp.racingcar.constant.ErrorStatus;
 import woocamp.racingcar.exception.RoundOutOfBoundsException;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -21,7 +21,7 @@ class RoundTest {
     void create_round() {
         assertThat(third_round.getCurrentRound()).isEqualTo(3);
         assertThatThrownBy(() -> new Round(0)).isInstanceOf(RoundOutOfBoundsException.class)
-                .hasMessage("시도할 회수는 %d보다 작을 수 없습니다", Round.ROUND_COUNT_MIN);
+                .hasMessage(ErrorStatus.MAX_ROUND_COUNT_EXCEEDED.getCause(), Round.ROUND_COUNT_MIN);
     }
 
     @Test
@@ -35,6 +35,6 @@ class RoundTest {
         Round round = new Round(1);
         assertThatThrownBy(round::next)
                 .isInstanceOf(RoundOutOfBoundsException.class)
-                .hasMessage("진행 할 라운드가 남아 있지 않습니다");
+                .hasMessage(ErrorStatus.NO_LEFT_ROUND.getCause());
     }
 }
