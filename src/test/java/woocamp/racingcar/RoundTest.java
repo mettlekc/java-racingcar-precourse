@@ -30,9 +30,11 @@ class RoundTest {
         assertThat(third_round.next()).isEqualTo(1);
     }
 
-    @Disabled
     @Test
     void round_under_zero() {
-        assertThat(third_round.next()).isZero();
+        Round round = new Round(1);
+        assertThatThrownBy(round::next)
+                .isInstanceOf(RoundOutOfBoundsException.class)
+                .hasMessage("진행 할 라운드가 남아 있지 않습니다");
     }
 }

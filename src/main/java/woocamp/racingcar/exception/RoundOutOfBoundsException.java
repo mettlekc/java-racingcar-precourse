@@ -4,4 +4,8 @@ public class RoundOutOfBoundsException extends RuntimeException{
     public RoundOutOfBoundsException(String cause, int minimumRoundCount) {
         super(String.format(cause, minimumRoundCount));
     }
+
+    public RoundOutOfBoundsException(String cause) {
+        super(cause);
+    }
 }

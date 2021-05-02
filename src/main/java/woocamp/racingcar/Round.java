@@ -17,6 +17,8 @@ public class Round {
     }
 
     public int next() {
+        if (round - 1 < ROUND_COUNT_MIN)
+            throw new RoundOutOfBoundsException("진행 할 라운드가 남아 있지 않습니다");
         return --round;
     }
 }
