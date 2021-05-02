@@ -24,7 +24,6 @@ public class CarsTest {
         assertThatThrownBy(() -> new Cars("")).isInstanceOf(EmptyCarException.class).hasMessage(ErrorStatus.EMPTY_CAR.getCause());
     }
 
-    @Disabled
     @Test
     void create_cars_by_empty_string_name() {
         assertThatThrownBy(() -> new Cars("pobi,,honux")).isInstanceOf(CarNameEmptyStringException.class).hasMessage(ErrorStatus.CAR_NAME_EMPTY.getCause());

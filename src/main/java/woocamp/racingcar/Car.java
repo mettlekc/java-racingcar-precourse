@@ -1,6 +1,7 @@
 package woocamp.racingcar;
 
 import woocamp.racingcar.constant.ErrorStatus;
+import woocamp.racingcar.exception.CarNameEmptyStringException;
 import woocamp.racingcar.exception.CarNameOutOfLengthException;
 
 public class Car {
@@ -10,6 +11,8 @@ public class Car {
     private int pos;
 
     public Car(String name) {
+        if (name.length() < 1)
+            throw new CarNameEmptyStringException(ErrorStatus.CAR_NAME_EMPTY);
         if (name.length() > CAR_NAME_MAX)
             throw new CarNameOutOfLengthException(ErrorStatus.CAR_NAME_LENGTH_EXCEEDED, CAR_NAME_MAX);
         this.name = name;
