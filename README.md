@@ -23,14 +23,10 @@
   * 우승자 선정 (중복 가능)
 
 ## 랭크 테스트 케이스
-phobi:3,crong:2,honux:1
-phobi
-phobi:3,crong:3,honux:1
-phobi,crong
-phobi:0,crong:0,honux:0
-phobi,crong,honux
-phobi:3
-phobi
+phobi:3,crong:2,honux:1=phobi
+phobi:3,crong:3,honux:1=phobi,crong
+phobi:0,crong:0,honux:0=phobi,crong,honux
+phobi:3=phobi
 
 ## 진행 방법
 * 숫자 야구 게임 요구사항을 파악한다.
