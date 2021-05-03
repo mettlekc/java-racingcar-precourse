@@ -12,6 +12,10 @@ public class Cars {
 
     private List<Car> cars;
 
+    public Cars(List<Car> cars) {
+        this.cars = cars;
+    }
+
     public Cars(String input) {
         if (input.isEmpty())
             throw new EmptyCarException(ErrorStatus.EMPTY_CAR);

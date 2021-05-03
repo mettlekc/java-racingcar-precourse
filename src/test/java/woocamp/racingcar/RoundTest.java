@@ -52,6 +52,8 @@ class RoundTest {
     @Test
     void round_over_play() {
         one_round.play(cars);
-        assertThatThrownBy(() -> one_round.play(cars)).isInstanceOf(RoundOutOfBoundsException.class).hasMessage(ErrorStatus.NO_LEFT_ROUND.getCause());
+        assertThatThrownBy(() -> one_round.play(cars))
+                .isInstanceOf(RoundOutOfBoundsException.class)
+                .hasMessage(ErrorStatus.NO_LEFT_ROUND.getCause());
     }
 }
