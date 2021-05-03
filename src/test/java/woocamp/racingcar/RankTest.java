@@ -3,6 +3,10 @@ package woocamp.racingcar;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
+import woocamp.racingcar.domain.Car;
+import woocamp.racingcar.domain.Cars;
+import woocamp.racingcar.domain.Move;
+import woocamp.racingcar.domain.Rank;
 
 import java.util.ArrayList;
 import java.util.Arrays;

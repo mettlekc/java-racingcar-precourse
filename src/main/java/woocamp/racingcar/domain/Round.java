@@ -1,4 +1,4 @@
-package woocamp.racingcar;
+package woocamp.racingcar.domain;
 
 import woocamp.racingcar.constant.ErrorStatus;
 import woocamp.racingcar.exception.RoundOutOfBoundsException;

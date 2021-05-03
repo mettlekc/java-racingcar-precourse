@@ -5,8 +5,8 @@ public enum ErrorStatus {
     NO_LEFT_ROUND("진행 할 라운드가 남아 있지 않습니다"),
     CAR_NAME_LENGTH_EXCEEDED("자동차 이름은 최대 %d자리를 넘을 수 없습니다"),
     CAR_NAME_EMPTY("입력 된 자동차 이름이 없습니다"),
-    EMPTY_CAR("입력 된 자동차가 없습니다");
-
+    EMPTY_CAR("입력 된 자동차가 없습니다"),
+    CANNOT_CREATE_THIS_INSTANCE("이 인스턴스를 생성 할 수 없습니다");
 
     private String cause;
 

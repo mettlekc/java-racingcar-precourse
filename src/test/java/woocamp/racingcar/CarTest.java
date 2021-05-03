@@ -4,6 +4,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
 import woocamp.racingcar.constant.ErrorStatus;
+import woocamp.racingcar.domain.Car;
+import woocamp.racingcar.domain.Move;
 import woocamp.racingcar.exception.CarNameOutOfLengthException;
 
 import static org.assertj.core.api.Assertions.assertThat;

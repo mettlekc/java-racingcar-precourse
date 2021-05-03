@@ -1,4 +1,4 @@
-package woocamp.racingcar;
+package woocamp.racingcar.domain;
 
 import java.util.ArrayList;
 import java.util.HashMap;

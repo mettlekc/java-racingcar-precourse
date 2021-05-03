@@ -2,6 +2,7 @@ package woocamp.racingcar;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import woocamp.racingcar.domain.Move;
 
 import java.util.HashSet;
 import java.util.Set;
