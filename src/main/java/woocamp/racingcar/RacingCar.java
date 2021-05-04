@@ -9,11 +9,14 @@ import java.util.Set;
 
 public class RacingCar {
 
-    private final Cars cars;
-    private final Round round;
+    private Cars cars;
+    private Round round;
 
-    public RacingCar(String input, int count) {
+    public void registCars(String input) {
         cars = new Cars(input);
+    }
+
+    public void registRound(int count) {
         round = new Round(count);
     }
 

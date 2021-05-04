@@ -17,7 +17,9 @@ class RacingCarTest {
     @BeforeEach
     void setUp() {
         round = 5;
-        racingCar = new RacingCar("pobi,crong,honux", round);
+        racingCar = new RacingCar();
+        racingCar.registCars("pobi,crong,honux");
+        racingCar.registRound(round);
     }
 
     @Test
