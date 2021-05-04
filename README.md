@@ -22,11 +22,30 @@
 * 레이싱 결과
   * 우승자 선정 (중복 가능)
 
+## 용어
+* Car : 레이싱 참가 차량
+* Round : 레이싱 시도 회수
+* Rank : 레이싱 결과 관리(Winner 리스트 관리) 
+  
+## Error Code
+* MAX_ROUND_COUNT_EXCEEDED : 라운드 시도 회수 미만인 경우
+* NO_LEFT_ROUND : 더 이상 남은 라운드가 없는 경우
+* CAR_NAME_LENGTH_EXCEEDED : 자동차 이름 길이 초과
+* CAR_NAME_EMPTY : 자동차 이름이 비어 있는 경우
+* EMPTY_CAR : 자동차 입력이 없은 경우
+* CANNOT_CREATE_THIS_INSTANCE : 객체 생성이 불가능한 경우
+
+## Exception
+* CarNameEmptyStringException : 비어 있는 자동차 이름
+* CarNameOutOfLengthException : 자동차 이름 길이 제한 초과
+* EmptyCarException : 차가 비어 있을 경우
+* RoundOutOfBoundsException : 제한 회수 미만인 경우
+
 ## 랭크 테스트 케이스
-phobi:3,crong:2,honux:1=phobi
-phobi:3,crong:3,honux:1=phobi,crong
-phobi:0,crong:0,honux:0=phobi,crong,honux
-phobi:3=phobi
+* phobi:3,crong:2,honux:1=phobi
+* phobi:3,crong:3,honux:1=phobi,crong
+* phobi:0,crong:0,honux:0=phobi,crong,honux
+* phobi:3=phobi
 
 ## 진행 방법
 * 숫자 야구 게임 요구사항을 파악한다.
