@@ -28,4 +28,9 @@ public class RacingCar {
     public Set<String> rank() {
         return new Rank(cars).winners();
     }
+
+    public boolean isNotFinish() {
+        return round.getCurrentRound() != 0;
+    }
+
 }

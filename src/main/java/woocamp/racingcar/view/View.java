@@ -6,6 +6,9 @@ import java.util.Map;
 import java.util.Set;
 
 public class View {
+
+    public static final String LOCATION_SYMBOL = "-";
+
     public static void print(Print resistCar) {
         System.out.println(resistCar.getMessage());
     }
@@ -31,7 +34,7 @@ public class View {
     private static String location(int location) {
         String line = "";
         while (location-- > 0) {
-            line += "-";
+            line += LOCATION_SYMBOL;
         }
         return line;
     }

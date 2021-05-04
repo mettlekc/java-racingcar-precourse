@@ -53,6 +53,18 @@ class RacingCarTest {
     }
 
     @Test
+    void is_finish_round() {
+        assertThat(racingCar.play()).isEqualTo(4);
+        assertThat(racingCar.play()).isEqualTo(3);
+        assertThat(racingCar.play()).isEqualTo(2);
+        assertThat(racingCar.isNotFinish()).isTrue();
+        assertThat(racingCar.play()).isEqualTo(1);
+        assertThat(racingCar.play()).isZero();
+
+        assertThat(racingCar.isNotFinish()).isFalse();
+    }
+
+    @Test
     void get_rank() {
         assertThat(racingCar.play()).isEqualTo(4);
         assertThat(racingCar.play()).isEqualTo(3);
