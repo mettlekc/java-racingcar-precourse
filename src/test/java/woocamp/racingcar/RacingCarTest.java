@@ -60,7 +60,8 @@ class RacingCarTest {
         assertThat(racingCar.play()).isEqualTo(1);
         assertThat(racingCar.play()).isZero();
 
-        racingCar.rank();
+        assertThat(racingCar.rank()).isNotEmpty();
+        assertThat(racingCar.rank()).containsAnyOf("pobi", "crong", "honux");
     }
 }
 

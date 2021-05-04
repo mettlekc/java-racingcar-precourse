@@ -1,9 +1,11 @@
 package woocamp.racingcar;
 
 import woocamp.racingcar.domain.Cars;
+import woocamp.racingcar.domain.Rank;
 import woocamp.racingcar.domain.Round;
 
 import java.util.Map;
+import java.util.Set;
 
 public class RacingCar {
 
@@ -23,4 +25,7 @@ public class RacingCar {
         return cars.getLocations();
     }
 
+    public Set<String> rank() {
+        return new Rank(cars).winners();
+    }
 }

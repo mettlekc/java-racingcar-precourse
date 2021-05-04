@@ -3,6 +3,7 @@ package woocamp.racingcar.view;
 import woocamp.racingcar.constant.Print;
 
 import java.util.Map;
+import java.util.Set;
 
 public class View {
     public static void print(Print resistCar) {
@@ -19,6 +20,12 @@ public class View {
 
     public static void printLocation(String name, int location) {
         System.out.println(name + ":" + location(location));
+    }
+
+    public static void printWinners(Set<String> winners) {
+        String result = String.join(",", winners.toArray(new String[0]));
+        System.out.println(result + Print.WINNER.getMessage());
+
     }
 
     private static String location(int location) {

@@ -9,9 +9,12 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 public class ViewTest {
 
@@ -62,6 +65,16 @@ public class ViewTest {
         View.printResult(locations);
         assertThat(outSpy.toString())
                 .contains("crong:--","phobi:-","honux:-");
+    }
+
+    @Test
+    void print_rank() {
+        Set<String> winners = new HashSet<>();
+        winners.add("phobi");
+        winners.add("honux");
+
+        View.printWinners(winners);
+        assertThat(outSpy.toString()).contains("phobi","honux","가 최종 우승했습니다.\r\n");
     }
 
 }
