@@ -7,6 +7,7 @@ import org.junit.jupiter.params.provider.CsvSource;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Set;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -19,7 +20,7 @@ public class RankTest {
         Car honux = createSampleCar("honux", 1);
 
         List<Car> list = Arrays.asList(phobi, crong, honux);
-        assertThat(getWinner(list)).contains(phobi);
+        assertThat(getWinner(list)).contains("phobi");
     }
 
     @ParameterizedTest
@@ -31,11 +32,10 @@ public class RankTest {
     }, delimiter = '=')
     void many_rank_Case(String samples, String expected) {
         assertThat(getWinner(getSampleCars(samples)))
-                .extracting(Car::getName)
                 .containsExactlyInAnyOrder(expected.split(","));
     }
 
-    private List<Car> getWinner(List<Car> list) {
+    private Set<String> getWinner(List<Car> list) {
         Cars cars = new Cars(list);
         return new Rank(cars).winners();
     }

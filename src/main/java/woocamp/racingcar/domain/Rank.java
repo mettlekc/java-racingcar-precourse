@@ -1,14 +1,11 @@
 package woocamp.racingcar.domain;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Rank {
 
     private int top = Integer.MIN_VALUE;
-    private Map<Integer, List<Car>> carsByPos;
+    private Map<Integer, Set<String>> carsByPos;
 
     public Rank(Cars cars) {
         carsByPos = new HashMap<>();
@@ -19,20 +16,20 @@ public class Rank {
     }
 
     private void addCarsByPos(Car car) {
-        List<Car> list = getCarsByPos(car.getLocation());
-        list.add(car);
+        Set<String> list = getCarsByPos(car.getLocation());
+        list.add(car.getName());
         carsByPos.put(car.getLocation(), list);
     }
 
-    private List<Car> getCarsByPos(int pos) {
-        List<Car> list = new ArrayList<>();
+    private Set<String> getCarsByPos(int pos) {
+        Set<String> list = new HashSet<>();
         if (carsByPos.containsKey(pos)) {
             list = carsByPos.get(pos);
         }
         return list;
     }
 
-    public List<Car> winners() {
+    public Set<String> winners() {
         return carsByPos.get(top);
     }
 

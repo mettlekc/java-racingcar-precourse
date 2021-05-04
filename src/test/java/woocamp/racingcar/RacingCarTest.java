@@ -8,9 +8,8 @@ import java.util.Map;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class RacingCarTest {
+class RacingCarTest {
 
     private RacingCar racingCar;
     private int round;
@@ -44,13 +43,24 @@ public class RacingCarTest {
 
     @Test
     void finish_round_play() {
-        assertEquals(racingCar.play(), 4);
-        assertEquals(racingCar.play(), 3);
-        assertEquals(racingCar.play(), 2);
-        assertEquals(racingCar.play(), 1);
-        assertEquals(racingCar.play(), 0);
+        assertThat(racingCar.play()).isEqualTo(4);
+        assertThat(racingCar.play()).isEqualTo(3);
+        assertThat(racingCar.play()).isEqualTo(2);
+        assertThat(racingCar.play()).isEqualTo(1);
+        assertThat(racingCar.play()).isZero();
 
         assertThatThrownBy(() -> racingCar.play()).isInstanceOf(RoundOutOfBoundsException.class);
+    }
+
+    @Test
+    void get_rank() {
+        assertThat(racingCar.play()).isEqualTo(4);
+        assertThat(racingCar.play()).isEqualTo(3);
+        assertThat(racingCar.play()).isEqualTo(2);
+        assertThat(racingCar.play()).isEqualTo(1);
+        assertThat(racingCar.play()).isZero();
+
+        racingCar.rank();
     }
 }
 
