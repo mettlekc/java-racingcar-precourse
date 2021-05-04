@@ -36,11 +36,11 @@ class CarTest {
     void move_position() {
         assertThat(car.move(Move.Status.PAUSE)).isZero();
         assertThat(car.move(Move.Status.FORWARD)).isEqualTo(1);
-        assertThat(car.getPos()).isEqualTo(1);
+        assertThat(car.getLocation()).isEqualTo(1);
         assertThat(car.move(Move.Status.FORWARD)).isEqualTo(2);
-        assertThat(car.getPos()).isEqualTo(2);
+        assertThat(car.getLocation()).isEqualTo(2);
         assertThat(car.move(Move.Status.PAUSE)).isEqualTo(2);
-        assertThat(car.getPos()).isEqualTo(2);
+        assertThat(car.getLocation()).isEqualTo(2);
     }
 
     @RepeatedTest(100)

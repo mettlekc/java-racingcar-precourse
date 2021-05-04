@@ -4,7 +4,9 @@ import woocamp.racingcar.constant.ErrorStatus;
 import woocamp.racingcar.exception.EmptyCarException;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Cars {
 
@@ -35,5 +37,13 @@ public class Cars {
         for (Car car : cars) {
             car.move();
         }
+    }
+
+    public Map<String, Integer> getLocations() {
+        Map<String, Integer> locations = new HashMap<>();
+        for (Car car : cars) {
+            locations.put(car.getName(), car.getLocation());
+        }
+        return locations;
     }
 }

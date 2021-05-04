@@ -35,6 +35,6 @@ public class CarsTest {
     void move_cars() {
         Cars cars = new Cars("pobi,crong,honux");
         cars.move();
-        assertThat(cars.getCars()).extracting(Car::getPos).allMatch(c -> c >= 0);
+        assertThat(cars.getCars()).extracting(Car::getLocation).allMatch(c -> c >= 0);
     }
 }

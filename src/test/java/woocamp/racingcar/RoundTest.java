@@ -49,7 +49,7 @@ class RoundTest {
     @Test
     void round_play() {
         one_round.play(cars);
-        assertThat(cars.getCars()).extracting(Car::getPos).allMatch(c -> c >= 0);
+        assertThat(cars.getCars()).extracting(Car::getLocation).allMatch(c -> c >= 0);
     }
 
     @Test

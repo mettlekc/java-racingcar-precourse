@@ -8,7 +8,7 @@ public class Car {
     public static final int CAR_NAME_MAX = 5;
 
     private String name;
-    private int pos;
+    private int location;
 
     public Car(String name) {
         if (name.length() < 1)
@@ -23,15 +23,15 @@ public class Car {
     }
 
     public int move(Move.Status status) {
-        return isMoveForward(status) ? ++pos : pos;
+        return isMoveForward(status) ? ++location : location;
     }
 
     public int move() {
         return move(Move.status());
     }
 
-    public int getPos() {
-        return this.pos;
+    public int getLocation() {
+        return this.location;
     }
 
     private boolean isMoveForward(Move.Status status) {

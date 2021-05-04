@@ -13,15 +13,15 @@ public class Rank {
     public Rank(Cars cars) {
         carsByPos = new HashMap<>();
         for (Car car : cars.getCars()) {
-            top = Math.max(top, car.getPos());
+            top = Math.max(top, car.getLocation());
             addCarsByPos(car);
         }
     }
 
     private void addCarsByPos(Car car) {
-        List<Car> list = getCarsByPos(car.getPos());
+        List<Car> list = getCarsByPos(car.getLocation());
         list.add(car);
-        carsByPos.put(car.getPos(), list);
+        carsByPos.put(car.getLocation(), list);
     }
 
     private List<Car> getCarsByPos(int pos) {

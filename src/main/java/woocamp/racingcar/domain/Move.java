@@ -18,7 +18,7 @@ public class Move {
         return status(RandomUtils.random(new Random()));
     }
 
-    enum Status {
+    public enum Status {
         PAUSE, FORWARD
     }
 }
