@@ -1,11 +1,8 @@
-package woocamp.racingcar;
+package woocamp.racingcar.domain;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import woocamp.racingcar.constant.ErrorStatus;
-import woocamp.racingcar.domain.Car;
-import woocamp.racingcar.domain.Cars;
-import woocamp.racingcar.domain.Round;
 import woocamp.racingcar.exception.RoundOutOfBoundsException;
 
 import static org.assertj.core.api.Assertions.assertThat;

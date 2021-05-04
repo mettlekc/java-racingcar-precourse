@@ -1,8 +1,7 @@
-package woocamp.racingcar;
+package woocamp.racingcar.domain;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import woocamp.racingcar.domain.Move;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -10,7 +9,7 @@ import java.util.stream.IntStream;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-class MoveStatusTest {
+class MoveTest {
     private Move move;
 
     @BeforeEach

@@ -1,9 +1,7 @@
-package woocamp.racingcar;
+package woocamp.racingcar.domain;
 
 import org.junit.jupiter.api.Test;
 import woocamp.racingcar.constant.ErrorStatus;
-import woocamp.racingcar.domain.Car;
-import woocamp.racingcar.domain.Cars;
 import woocamp.racingcar.exception.CarNameEmptyStringException;
 import woocamp.racingcar.exception.CarNameOutOfLengthException;
 import woocamp.racingcar.exception.EmptyCarException;
