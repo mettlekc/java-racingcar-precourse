@@ -1,5 +1,6 @@
 package woocamp.racingcar.domain;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
@@ -14,6 +15,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class RankTest {
 
     @Test
+    @DisplayName("랭크 생성 후 승자 리턴 테스트")
     void create_rank() {
         Car phobi = createSampleCar("phobi", 3);
         Car crong = createSampleCar("crong", 2);
@@ -30,6 +32,7 @@ public class RankTest {
             "phobi:0,crong:0,honux:0=phobi,crong,honux",
             "phobi:3=phobi",
     }, delimiter = '=')
+    @DisplayName("랭크 생성 후 승자 리턴 여러 케이스에 대해서 테스트")
     void many_rank_Case(String samples, String expected) {
         assertThat(getWinner(getSampleCars(samples)))
                 .containsExactlyInAnyOrder(expected.split(","));

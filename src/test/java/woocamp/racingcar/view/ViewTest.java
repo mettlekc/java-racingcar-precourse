@@ -1,12 +1,11 @@
 package woocamp.racingcar.view;
 
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import woocamp.racingcar.constant.Print;
 
 import java.io.ByteArrayOutputStream;
-import java.io.IOException;
 import java.io.PrintStream;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -14,7 +13,6 @@ import java.util.Map;
 import java.util.Set;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 public class ViewTest {
 
@@ -27,6 +25,7 @@ public class ViewTest {
     }
 
     @Test
+    @DisplayName("자동차 등록 출력 테스트")
     void regist_car() {
          setUp();
         View.print(Print.REGIST_CAR);
@@ -34,18 +33,21 @@ public class ViewTest {
     }
 
     @Test
+    @DisplayName("자동차 회수 등록 출력 테스트")
     void regist_round() {
         View.print(Print.REGIST_ROUND);
         assertThat(outSpy.toString()).isEqualTo(Print.REGIST_ROUND.getMessage() + "\r\n");
     }
 
     @Test
+    @DisplayName("결과 타이틀 출력 테스트")
     void print_result_title() {
         View.print(Print.RESULT_TITLE);
         assertThat(outSpy.toString()).isEqualTo(Print.RESULT_TITLE.getMessage() + "\r\n");
     }
 
     @Test
+    @DisplayName("단일 자동차 위치 출력 테스트")
     void print_location() {
         View.printLocation("phobi", 1);
         assertThat(outSpy.toString()).isEqualTo("phobi:-" + "\r\n");
@@ -56,6 +58,7 @@ public class ViewTest {
     }
 
     @Test
+    @DisplayName("전체 자동차 위치 출력 테스트")
     void print_result() {
         Map<String, Integer> locations = new HashMap<>();
         locations.put("phobi", 1);
@@ -68,6 +71,7 @@ public class ViewTest {
     }
 
     @Test
+    @DisplayName("우승자 출력 테스트")
     void print_rank() {
         Set<String> winners = new HashSet<>();
         winners.add("phobi");

@@ -1,6 +1,7 @@
 package woocamp.racingcar.domain;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
 import woocamp.racingcar.constant.ErrorStatus;
@@ -19,12 +20,14 @@ class CarTest {
     }
 
     @Test
+    @DisplayName("자동차 생성 테스트")
     void create_car_test() {
         assertThat(new Car("123").getName()).hasSizeLessThanOrEqualTo(5);
         assertThat(new Car("12345").getName()).hasSizeLessThanOrEqualTo(5);
     }
 
     @Test
+    @DisplayName("자동차 이름을 초과해서 생성할 경우 테스트")
     void over_length_nammed_car() {
         assertThatThrownBy(() -> new Car("123456")).isInstanceOf(CarNameOutOfLengthException.class)
                 .hasMessage(ErrorStatus.CAR_NAME_LENGTH_EXCEEDED.getCause(), Car.CAR_NAME_MAX);

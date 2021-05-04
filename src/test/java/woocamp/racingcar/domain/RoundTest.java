@@ -1,6 +1,7 @@
 package woocamp.racingcar.domain;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import woocamp.racingcar.constant.ErrorStatus;
 import woocamp.racingcar.exception.RoundOutOfBoundsException;
@@ -22,6 +23,7 @@ class RoundTest {
     }
 
     @Test
+    @DisplayName("라운드 생성 테스트")
     void create_round() {
         assertThat(three_round.getCurrentRound()).isEqualTo(3);
         assertThatThrownBy(() -> new Round(0)).isInstanceOf(RoundOutOfBoundsException.class)
@@ -29,12 +31,14 @@ class RoundTest {
     }
 
     @Test
+    @DisplayName("다음 라운드 처리 테스트")
     void next_round() {
         assertThat(three_round.next()).isEqualTo(2);
         assertThat(three_round.next()).isEqualTo(1);
     }
 
     @Test
+    @DisplayName("많은 라운드 소진 시 예외 처리 테스트")
     void round_under_zero() {
         Round round = new Round(1);
         round.next();
@@ -44,12 +48,14 @@ class RoundTest {
     }
 
     @Test
+    @DisplayName("싱글 라운드 소진 테스트")
     void round_play() {
         one_round.play(cars);
         assertThat(cars.getCars()).extracting(Car::getLocation).allMatch(c -> c >= 0);
     }
 
     @Test
+    @DisplayName("싱글 라운드 모든 횟수 소진시 예외 처리 테스트")
     void round_over_play() {
         one_round.play(cars);
         assertThatThrownBy(() -> one_round.play(cars))

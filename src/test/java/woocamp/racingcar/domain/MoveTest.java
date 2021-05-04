@@ -1,6 +1,7 @@
 package woocamp.racingcar.domain;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.HashSet;
@@ -18,16 +19,19 @@ class MoveTest {
     }
 
     @Test
+    @DisplayName("자동차 이동 상태 테스트")
     void move_forward() {
         assertThat(move.status(4)).isEqualTo(Move.Status.FORWARD);
     }
 
     @Test
+    @DisplayName("자동차 멈춤 상태 테스트")
     void move_pause() {
         assertThat(move.status(3)).isEqualTo(Move.Status.PAUSE);
     }
 
     @Test
+    @DisplayName("자동차 랜덤 이동 테스트")
     void move_random() {
         assertThat(move.status()).isIn(Move.Status.FORWARD, Move.Status.PAUSE);
 
